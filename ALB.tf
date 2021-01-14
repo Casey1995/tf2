@@ -9,8 +9,8 @@ resource "aws_lb" "test" {
   name                       = "test-lb-tf"
   internal                   = false
   load_balancer_type         = "application"
-  security_groups            = ["sg-029795867274d1613"]
-  subnets                    = ["subnet-09e18dd65ff44a681", "subnet-043759de5855913ff"]
+  security_groups            = ["sg-029795xxxxx"]
+  subnets                    = ["subnet-09e18ddxxxx", "subnet-04375955xxx"]
   enable_deletion_protection = false
 
   tags = {
@@ -88,21 +88,6 @@ resource "aws_security_group" "mongodb_sg" {
       cidr_blocks = ["0.0.0.0/0"]
     }
   }
-  /*
-  ingress {
-    description = "TLS from VPC"
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = [aws_vpc.main.cidr_block]
-  }
-  ingress {
-    description = "SSH from VPC"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = [aws_vpc.main.cidr_block]
-  }*/
 }
 
 resource "aws_vpc" "main" {
