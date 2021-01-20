@@ -65,12 +65,12 @@ locals {
   ingress_rule = [{
     port        = 443
     description = "https"
-    protocol    = "https"
+    protocol    = "tcp"
     },
     {
       port        = 22
       description = "SSH"
-      protocol    = "SSH"
+      protocol    = "tcp"
   }]
 }
 resource "aws_security_group" "mongodb_sg" {
